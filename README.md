@@ -5,7 +5,8 @@ This is a Multi Level Parking Solutions designed for the city of Minas Tirith.
 HOW TO RUN :
 
   As this is the maven project you can run with the maven command.
-  Compile the project with the command : mvn install
+  Compile the project with the command : 
+  	mvn install
   make sure you have maven install in your system
 	From Command Line :
 	
