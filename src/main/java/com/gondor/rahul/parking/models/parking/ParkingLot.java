@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * class {@code ParkingLot} is the Singleton Class which is the center class
- * for all parking related models.
+ * class {@code ParkingLot} is the Singleton Class which is the center class for
+ * all parking related models.
  *
  */
 public class ParkingLot {
@@ -18,36 +18,36 @@ public class ParkingLot {
 	private static int noOfRoyalVehicleParked;
 	private static int freeCarSpots;
 	private static int freeBikeSpots;
-	
-	private Map<String,ParkingTicket> parkings = new HashMap<>();
+
+	private Map<String, ParkingTicket> parkings = new HashMap<>();
 	private List<ParkingFloor> parkingFloors;
-	
+
 	private ParkingLot(int noOfFloors) {
-		freeCarSpots = noOfFloors*40;
+		freeCarSpots = noOfFloors * 40;
 		freeBikeSpots = 0;
 		noOfBikeParked = 0;
 		noOfBikeParked = 0;
 		noOfRoyalVehicleParked = 0;
 		this.noOfFloors = noOfFloors;
-		
+
 		parkingFloors = new ArrayList<>();
-		
-		for(int i=0;i<noOfFloors;i++) {
+
+		for (int i = 0; i < noOfFloors; i++) {
 			parkingFloors.add(new ParkingFloor(i));
 		}
-		
+
 	}
 
-	//Not used synchronized as only one thread is accessing
+	// Not used synchronized as only one thread is accessing
 	public static ParkingLot getInstance(int n) {
-		if(parkingLot==null){
+		if (parkingLot == null) {
 			parkingLot = new ParkingLot(n);
 		}
 		return parkingLot;
 	}
-	
-	//For returning the instance after the ParkingLot has been assigned
-	public static ParkingLot getInstance(){
+
+	// For returning the instance after the ParkingLot has been assigned
+	public static ParkingLot getInstance() {
 		return parkingLot;
 	}
 
@@ -110,5 +110,5 @@ public class ParkingLot {
 	public static void setNoOfRoyalVehicleParked(int noOfRoyalVehicleParked) {
 		ParkingLot.noOfRoyalVehicleParked = noOfRoyalVehicleParked;
 	}
-	
+
 }

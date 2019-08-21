@@ -6,7 +6,7 @@ import com.gondor.rahul.parking.services.ParkingServiceImpl;
 public class ParkingServiceFactory {
 
 	private static final ParkingService parkingService = new ParkingServiceImpl();
-	
+
 	public static ParkingService getParkingService() {
 		return parkingService;
 	}

@@ -1,8 +1,8 @@
 package com.gondor.rahul.parking.models.parking;
 
 /**
- * class {@code ParkingFloor} is the model class for the individual floor in 
- * the multi level parking class;
+ * class {@code ParkingFloor} is the model class for the individual floor in the
+ * multi level parking class;
  *
  */
 public class ParkingFloor {
@@ -12,10 +12,16 @@ public class ParkingFloor {
 	private int noOfRoyalVehiclesAssigned;
 	private int noOfFreeCarSpotsInCurrentFloor;
 	private int noOfFreeBikeSpotsInCurrentFloor;
-	
+
+	/*
+	 * Taking a array as there are only 20 slots per floor and if we go in a
+	 * sequence then the minimum slots will be empty in the worst case. For
+	 * Lower level and Upper Level in stack both are being considered
+	 * differently
+	 */
 	private ParkingSlot[] lowerParkingSlot = new ParkingSlot[20];
 	private ParkingSlot[] upperParkingSlot = new ParkingSlot[20];
-	
+
 	public ParkingFloor(int floorIndex) {
 		this.floorIndex = floorIndex;
 		this.noOfCarsAssigned = 0;
@@ -23,12 +29,12 @@ public class ParkingFloor {
 		this.noOfRoyalVehiclesAssigned = 0;
 		this.noOfFreeCarSpotsInCurrentFloor = 40;
 		this.noOfFreeBikeSpotsInCurrentFloor = 40;
-		
-		for(int i=0;i<20;i++){
-			lowerParkingSlot[i] = new LowerParkingSlot(this.floorIndex,i);
-			upperParkingSlot[i] = new UpperParkingSlot(this.floorIndex,i);
+
+		for (int i = 0; i < 20; i++) {
+			lowerParkingSlot[i] = new LowerParkingSlot(this.floorIndex, i);
+			upperParkingSlot[i] = new UpperParkingSlot(this.floorIndex, i);
 		}
-		
+
 	}
 
 	public Integer getFloorIndex() {

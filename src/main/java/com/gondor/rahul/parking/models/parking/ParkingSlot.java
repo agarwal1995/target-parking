@@ -4,9 +4,9 @@ import com.gondor.rahul.parking.enums.StackLevel;
 import com.gondor.rahul.parking.enums.VehicleCategory;
 
 /**
- * class {@code ParkingSlot} is the generalized model for the individual 
- * slots in the parking. This class also acts as a superclass for the 
- * more dedicated classes for the individual spots.
+ * class {@code ParkingSlot} is the generalized model for the individual slots
+ * in the parking. This class also acts as a superclass for the more dedicated
+ * classes for the individual spots.
  * 
  */
 public class ParkingSlot {
@@ -16,9 +16,8 @@ public class ParkingSlot {
 	private int filled;
 	private boolean isFree;
 	protected VehicleCategory vehicleType;
-	
-	
-	public ParkingSlot(int floorIndex, int spotNumber,StackLevel level) {
+
+	public ParkingSlot(int floorIndex, int spotNumber, StackLevel level) {
 		this.floorIndex = floorIndex;
 		this.spotNumber = spotNumber;
 		this.filled = 0;
@@ -34,7 +33,7 @@ public class ParkingSlot {
 	public void setCapacity() {
 
 	}
-	
+
 	public int getFilled() {
 		return filled;
 	}
@@ -42,7 +41,7 @@ public class ParkingSlot {
 	public void setFilled(int filled) {
 		this.setCapacity();
 		this.filled = filled;
-		if(this.filled == this.capacity){
+		if (this.filled == this.capacity) {
 			this.isFree = false;
 		}
 	}
@@ -75,5 +74,5 @@ public class ParkingSlot {
 	public String toString() {
 		return "ParkingSlot [spotNumber=" + spotNumber + ", filled=" + filled + "]";
 	}
-	
+
 }
