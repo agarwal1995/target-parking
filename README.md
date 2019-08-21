@@ -4,12 +4,9 @@ This is a Multi Level Parking Solutions designed for the city of Minas Tirith.
 
 HOW TO RUN :
 
+  As this is the maven project you can run with the maven command.
   Compile the project with the command : mvn install
   make sure you have maven install in your system
-	For Windows :
-	
-		To Start The Application find the run the batch file inside the target folder of the application
-
 	From Command Line :
 	
 		goto the target directory and run the command : "java -jar gondor-parking-0.0.1-SNAPSHOT.jar"
